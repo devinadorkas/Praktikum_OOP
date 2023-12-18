@@ -36,12 +36,6 @@ public class GUI_Inventory_BarangKantor extends javax.swing.JFrame{
             //Memperbarui nilai rowCount setelah penghapusan baris terakhir
             rowCount = dataModel.getRowCount();
         }
-        //konstruktor 
-        Inventory_BarangKantor data_barang = new Inventory_BarangKantor();
-        txt_supplier.setText(data_barang.supplier_barang);
-        txt_supplier.setEnabled(false);
-        txt_stok.setText(Integer.toString(data_barang.stok_barang));
-        txt_stok.setEnabled(false);
     }
 
     public void clear(){
@@ -288,8 +282,9 @@ public class GUI_Inventory_BarangKantor extends javax.swing.JFrame{
 
     private void btn_simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simpanActionPerformed
         // TODO add your handling code here:
+        try{
         // Menampilkan pesan dialog bahwa data telah ditambahkan ke tabel
-        JOptionPane.showMessageDialog(null, "Data anda Ditambahkan Ke tabel");
+        JOptionPane.showMessageDialog(null, "Data anda Ditambahkan ke tabel");
         // Mengambil model data dari tabel
         DefaultTableModel dataModel = (DefaultTableModel) 
         tabel_data_inventory.getModel();
@@ -336,6 +331,12 @@ public class GUI_Inventory_BarangKantor extends javax.swing.JFrame{
             list.add(data_barang.cetakKondisiBarang());
             // Menambahkan baris baru ke model tabel menggunakan data dari ArrayList 'list'
             dataModel.addRow(list.toArray());
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Silakan input nomor yang valid.");
+        } catch(Exception e){
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "telah terjadi error. periksa kembali inputan anda.");
+        }
     }//GEN-LAST:event_btn_simpanActionPerformed
 
     private void btn_closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_closeActionPerformed

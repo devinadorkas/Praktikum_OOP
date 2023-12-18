@@ -5,7 +5,6 @@
  */
 package Bab8.Interface.Latihan1;
 
-import Bab8.Interface.Latihan2.*;
 import ProjectPraktikum.Bab1.Bab5.Bab6.Bab7.Bab8.*;
 
 /**

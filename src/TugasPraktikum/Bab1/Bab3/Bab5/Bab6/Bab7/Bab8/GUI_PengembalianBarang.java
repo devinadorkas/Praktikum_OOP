@@ -51,7 +51,6 @@ public class GUI_PengembalianBarang extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txt_idpinjam = new javax.swing.JTextField();
         txt_namabarangkembali = new javax.swing.JTextField();
-        txt_tglkembali = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txt_jmlkembali = new javax.swing.JTextField();
         btn_cetakKembali = new javax.swing.JButton();
@@ -59,6 +58,9 @@ public class GUI_PengembalianBarang extends javax.swing.JFrame {
         txt_jmlpinjam = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabel_data_pengembalian = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,19 +97,26 @@ public class GUI_PengembalianBarang extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tabel_data_pengembalian);
 
+        jButton1.setText("close");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Batal");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(196, 196, 196))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(118, 118, 118)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,17 +130,30 @@ public class GUI_PengembalianBarang extends javax.swing.JFrame {
                     .addComponent(btn_cetakKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txt_namabarangkembali)
                     .addComponent(txt_idpinjam)
-                    .addComponent(txt_tglkembali)
                     .addComponent(txt_jmlkembali)
-                    .addComponent(txt_jmlpinjam, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_jmlpinjam, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(196, 196, 196))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton1))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(39, 39, 39)
@@ -144,8 +166,8 @@ public class GUI_PengembalianBarang extends javax.swing.JFrame {
                         .addComponent(txt_namabarangkembali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt_tglkembali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))))
+                            .addComponent(jLabel4)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -158,7 +180,11 @@ public class GUI_PengembalianBarang extends javax.swing.JFrame {
                 .addComponent(btn_cetakKembali)
                 .addGap(29, 29, 29)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
@@ -178,7 +204,6 @@ public class GUI_PengembalianBarang extends javax.swing.JFrame {
         // Mengatur atribut menggunakan nilai dari komponen 
             data_kmbl.SetidKembali(txt_idpinjam.getText());
             data_kmbl.namaBarangPinjam(txt_namabarangkembali.getText());
-            data_kmbl.tglKembali(txt_tglkembali.getText());
             data_kmbl.jmlPinjam(Integer.parseInt(txt_jmlpinjam.getText()));
             data_kmbl.jmlKembali(Integer.parseInt(txt_jmlkembali.getText()));
         // Menambahkan data-data dari objek pinjamAE ke dalam ArrayList 'list'
@@ -190,6 +215,19 @@ public class GUI_PengembalianBarang extends javax.swing.JFrame {
        // Menambahkan baris baru ke model tabel menggunakan data dari ArrayList 'list'
             dataModel.addRow(list.toArray());
     }//GEN-LAST:event_btn_cetakKembaliActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        txt_idpinjam.setText("");
+        txt_jmlkembali.setText("");
+        txt_jmlpinjam.setText("");
+        txt_namabarangkembali.setText("");
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,6 +269,9 @@ public class GUI_PengembalianBarang extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_cetakKembali;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -243,6 +284,5 @@ public class GUI_PengembalianBarang extends javax.swing.JFrame {
     private javax.swing.JTextField txt_jmlkembali;
     private javax.swing.JTextField txt_jmlpinjam;
     private javax.swing.JTextField txt_namabarangkembali;
-    private javax.swing.JTextField txt_tglkembali;
     // End of variables declaration//GEN-END:variables
 }
